@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>Legitarsasagok_REST_API</RootNamespace>
-    <UserSecretsId>1c90c060-6bbf-42e7-8b34-58ea1dffcfca</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33130.400
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legitarsasagok-REST-API", "Legitarsasagok-REST-API\Legitarsasagok-REST-API.csproj", "{1B3C715A-5C40-4C24-A28C-73C2FC9199AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legitarsasagok-REST-API", "Legitarsasagok-REST-API\Legitarsasagok-REST-API.csproj", "{A5BCFAC8-2E83-4E29-98DE-230CEAC55D6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1B3C715A-5C40-4C24-A28C-73C2FC9199AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1B3C715A-5C40-4C24-A28C-73C2FC9199AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B3C715A-5C40-4C24-A28C-73C2FC9199AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1B3C715A-5C40-4C24-A28C-73C2FC9199AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5BCFAC8-2E83-4E29-98DE-230CEAC55D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5BCFAC8-2E83-4E29-98DE-230CEAC55D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5BCFAC8-2E83-4E29-98DE-230CEAC55D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5BCFAC8-2E83-4E29-98DE-230CEAC55D6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D3A474F0-1553-42DC-9583-1C1F1DA74C20}
+		SolutionGuid = {031FBBFC-00A1-47AD-9C6C-7EEC03F35661}
 	EndGlobalSection
 EndGlobal
