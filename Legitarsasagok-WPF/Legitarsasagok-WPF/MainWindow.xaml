@@ -5,9 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Legitarsasagok_WPF"
         mc:Ignorable="d"
-        Title="Repülő járatok" Height="768" Width="1024" ResizeMode="NoResize"  Topmost="False" WindowState="Normal">
+        Title="Repülő járatok" Height="600" Width="756" Topmost="False" WindowState="Normal">
     <Grid>
-        
-
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF595C9F" Offset="0"/>
+                <GradientStop Color="#FFD8A886" Offset="0.48"/>
+                <GradientStop Color="#FF93495F" Offset="0.663"/>
+                <GradientStop Color="#FF29174C" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ComboBox HorizontalAlignment="Center" Margin="0,166,0,0" VerticalAlignment="Top" Width="180" FontSize="20"/>
+        <Label Content="Kiindulási város:" HorizontalAlignment="Left" Margin="288,130,0,0" VerticalAlignment="Top" FontSize="16" Width="164"/>
+        <Label Content="Érkezési  város:" HorizontalAlignment="Left" Margin="288,204,0,0" VerticalAlignment="Top" FontSize="16" Width="164"/>
+        <ComboBox HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top" Width="180" FontSize="20"/>
+        <Label Content="Repülő járatok" HorizontalAlignment="Center" Margin="0,48,0,0" VerticalAlignment="Top" Height="53" Width="212" FontSize="30"/>
+        <Label Content="Indulás napja:" HorizontalAlignment="Left" Margin="288,285,0,0" VerticalAlignment="Top" FontSize="16" Width="164"/>
+        <Calendar HorizontalAlignment="Center" Margin="0,321,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
