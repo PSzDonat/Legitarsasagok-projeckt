@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  RestApi:
+    build:
+      context: ./Legitarsasag-REST-API
+    image: rest-api
+    ports:
+      - 5000:80
+      - 448
