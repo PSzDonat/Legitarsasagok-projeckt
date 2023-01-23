@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33130.400
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legitarsasag REST API", "Legitarsasag REST API\Legitarsasag REST API.csproj", "{084EDA53-7BC9-4902-BB29-DA3ED7A62823}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{084EDA53-7BC9-4902-BB29-DA3ED7A62823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{084EDA53-7BC9-4902-BB29-DA3ED7A62823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{084EDA53-7BC9-4902-BB29-DA3ED7A62823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{084EDA53-7BC9-4902-BB29-DA3ED7A62823}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F7DECAA-810E-4DBD-B9BD-D8978E9DFD58}
+	EndGlobalSection
+EndGlobal
