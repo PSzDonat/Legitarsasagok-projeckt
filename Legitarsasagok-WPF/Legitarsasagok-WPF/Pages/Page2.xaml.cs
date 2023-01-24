@@ -1,5 +1,4 @@
-﻿using PushToWin.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Legitarsasagok_WPF
+namespace Legitarsasagok_WPF.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Page2.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Page2 : Page
     {
-        public static MainWindowModel context = new MainWindowModel();
-        public MainWindow()
+        public Page2()
         {
             InitializeComponent();
-            this.DataContext = context;
-            MainWindow.context.MakeVisible("Page1");
         }
     }
 }
