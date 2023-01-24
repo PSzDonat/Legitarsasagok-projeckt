@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Legitarsasagok_REST_API.Model;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,35 +16,57 @@ namespace Legitarsasagok_REST_API.Controllers
     {
         // GET: api/<AirlineController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public DbSet<RepuloJaratok> Get()
         {
-            return new string[] { "value1", "value2" };
+            DataBaseContext app = new DataBaseContext();
+            return app.RepuloJaratok;
+
         }
 
         // GET api/<AirlineController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public List<RepuloJaratok> Get(int id)
         {
-            return "value";
+            DataBaseContext app = new DataBaseContext();
+            return app.RepuloJaratok.Where(x => x.ID == id).ToList();
         }
 
         // POST api/<AirlineController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] RepuloJaratok value)
         {
+            DataBaseContext app = new DataBaseContext();
+            app.RepuloJaratok.Add(value);
+            app.SaveChanges();
 
         }
 
         // PUT api/<AirlineController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(uint id, [FromBody] RepuloJaratok value)
         {
+            DataBaseContext app = new DataBaseContext();
+            var find = app.RepuloJaratok.Find(id);
+            find.Legitarsasag = value.Legitarsasag;
+            find.Honnan = value.Honnan;
+            find.Hova = value.Hova;
+            find.Tavolsag = value.Tavolsag;
+            find.UtazasiIdo = value.UtazasiIdo;
+            find.UtazasiDij = value.UtazasiDij;
+            find.Menetrend = value.Menetrend;
+            find.Varosok = value.Varosok;
+            app.SaveChanges();
         }
 
         // DELETE api/<AirlineController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            DataBaseContext app = new DataBaseContext();
+            
+            RepuloJaratok indexData = app.RepuloJaratok.Where(x => x.ID == id).ToList()[0];
+            app.RepuloJaratok.Remove(indexData);
+            app.SaveChanges();
         }
     }
 }
