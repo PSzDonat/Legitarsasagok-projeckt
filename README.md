@@ -15,7 +15,7 @@ Rest Api:
 
 1) Navigate to root of the project.
 2) Open `Legitarsasagok-REST-API` in Visual Studio
-3) Run it in `IIS Express` | :warning: Do not run it in Docker!
+3) Run it in `IIS Express` | :warning: Do not run it in `Docker`!
 
 Vue:
 
