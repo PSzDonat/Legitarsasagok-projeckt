@@ -28,7 +28,7 @@ namespace Legitarsasagok_WPF.Pages
         #region TÖRÖLD EZT 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.context.MakeVisible("Page4");
+            MainWindow.context.MakeVisible("Page3");
         }
         #endregion
     }
