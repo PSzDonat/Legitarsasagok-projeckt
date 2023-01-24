@@ -74,11 +74,11 @@ namespace Legitarsasagok_REST_API.Controllers
                     new RepuloJaratok
                     {
                         ID = (uint)b++,
-                        Legitarsasag = "Wizz Air",                                                                                                                                         
+                        Legitarsasag = "Wizz Air",
                         Honnan = "Budapest",
                         Hova = "London",
                         Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        UtazasiIdo = 120,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -88,7 +88,7 @@ namespace Legitarsasagok_REST_API.Controllers
                         Honnan = "Budapest",
                         Hova = "Parizs",
                         Tavolsag = 1250,
-                        UtazasiIdo = 145,
+                        UtazasiIdo = 100,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -98,7 +98,7 @@ namespace Legitarsasagok_REST_API.Controllers
                         Honnan = "Budapest",
                         Hova = "Berlin",
                         Tavolsag = 685,
-                        UtazasiIdo = 145,
+                        UtazasiIdo = 60,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -108,7 +108,7 @@ namespace Legitarsasagok_REST_API.Controllers
                         Honnan = "Budapest",
                         Hova = "Bécs",
                         Tavolsag = 215,
-                        UtazasiIdo = 145,
+                        UtazasiIdo = 25,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -118,7 +118,7 @@ namespace Legitarsasagok_REST_API.Controllers
                         Honnan = "London",
                         Hova = "Budapest",
                         Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        UtazasiIdo = 120,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -128,7 +128,7 @@ namespace Legitarsasagok_REST_API.Controllers
                         Honnan = "London",
                         Hova = "Párizs",
                         Tavolsag = 340,
-                        UtazasiIdo = 145,
+                        UtazasiIdo = 30,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -138,7 +138,7 @@ namespace Legitarsasagok_REST_API.Controllers
                         Honnan = "London",
                         Hova = "Berlin",
                         Tavolsag = 930,
-                        UtazasiIdo = 145,
+                        UtazasiIdo = 75,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -148,7 +148,7 @@ namespace Legitarsasagok_REST_API.Controllers
                         Honnan = "London",
                         Hova = "Bécs",
                         Tavolsag = 1230,
-                        UtazasiIdo = 145,
+                        UtazasiIdo = 100,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -157,8 +157,8 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Párizs",
                         Hova = "Budapest",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 1250,
+                        UtazasiIdo = 100,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -167,8 +167,8 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Párizs",
                         Hova = "London",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 340,
+                        UtazasiIdo = 30,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -177,8 +177,8 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Párizs",
                         Hova = "Berlin",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 875,
+                        UtazasiIdo = 70,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -187,8 +187,8 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Párizs",
                         Hova = "Bécs",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 1030,
+                        UtazasiIdo = 90,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -197,8 +197,8 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Berlin",
                         Hova = "Budapest",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 685,
+                        UtazasiIdo = 62,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -207,8 +207,8 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Berlin",
                         Hova = "Párizs",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 875,
+                        UtazasiIdo = 73,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -217,8 +217,8 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Berlin",
                         Hova = "London",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 930,
+                        UtazasiIdo = 75,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -227,8 +227,8 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Berlin",
                         Hova = "Bécs",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 520,
+                        UtazasiIdo = 46,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -237,8 +237,8 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Bécs",
                         Hova = "Budapest",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 215,
+                        UtazasiIdo = 25,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -247,8 +247,8 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Bécs",
                         Hova = "London",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 1230,
+                        UtazasiIdo = 100,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -257,8 +257,8 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Bécs",
                         Hova = "Párizs",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 1030,
+                        UtazasiIdo = 80,
                         UtazasiDij = 6
                     },
                     new RepuloJaratok
@@ -267,9 +267,210 @@ namespace Legitarsasagok_REST_API.Controllers
                         Legitarsasag = "Wizz Air",
                         Honnan = "Bécs",
                         Hova = "Berlin",
-                        Tavolsag = 1450,
-                        UtazasiIdo = 145,
+                        Tavolsag = 520,
+                        UtazasiIdo = 43,
                         UtazasiDij = 6
+                    }
+
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Budapest",
+                        Hova = "London",
+                        Tavolsag = 1450,
+                        UtazasiIdo = 120,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Budapest",
+                        Hova = "Parizs",
+                        Tavolsag = 1250,
+                        UtazasiIdo = 100,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Budapest",
+                        Hova = "Berlin",
+                        Tavolsag = 685,
+                        UtazasiIdo = 60,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Budapest",
+                        Hova = "Bécs",
+                        Tavolsag = 215,
+                        UtazasiIdo = 25,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "London",
+                        Hova = "Budapest",
+                        Tavolsag = 1450,
+                        UtazasiIdo = 120,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "London",
+                        Hova = "Párizs",
+                        Tavolsag = 340,
+                        UtazasiIdo = 30,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "London",
+                        Hova = "Berlin",
+                        Tavolsag = 930,
+                        UtazasiIdo = 75,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "London",
+                        Hova = "Bécs",
+                        Tavolsag = 1230,
+                        UtazasiIdo = 100,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Párizs",
+                        Hova = "Budapest",
+                        Tavolsag = 1250,
+                        UtazasiIdo = 100,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Párizs",
+                        Hova = "London",
+                        Tavolsag = 340,
+                        UtazasiIdo = 30,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Párizs",
+                        Hova = "Berlin",
+                        Tavolsag = 875,
+                        UtazasiIdo = 70,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Párizs",
+                        Hova = "Bécs",
+                        Tavolsag = 1030,
+                        UtazasiIdo = 90,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Berlin",
+                        Hova = "Budapest",
+                        Tavolsag = 685,
+                        UtazasiIdo = 62,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Berlin",
+                        Hova = "Párizs",
+                        Tavolsag = 875,
+                        UtazasiIdo = 73,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Berlin",
+                        Hova = "London",
+                        Tavolsag = 930,
+                        UtazasiIdo = 75,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Berlin",
+                        Hova = "Bécs",
+                        Tavolsag = 520,
+                        UtazasiIdo = 46,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Bécs",
+                        Hova = "Budapest",
+                        Tavolsag = 215,
+                        UtazasiIdo = 25,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Bécs",
+                        Hova = "London",
+                        Tavolsag = 1230,
+                        UtazasiIdo = 100,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Bécs",
+                        Hova = "Párizs",
+                        Tavolsag = 1030,
+                        UtazasiIdo = 80,
+                        UtazasiDij = 9
+                    },
+                    new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Bécs",
+                        Hova = "Berlin",
+                        Tavolsag = 520,
+                        UtazasiIdo = 43,
+                        UtazasiDij = 9
                     }
                 );
             #endregion
