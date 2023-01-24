@@ -25,11 +25,26 @@ namespace Legitarsasagok_WPF.Pages
             InitializeComponent();
         }
 
-        #region TÖRÖLD EZT 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MainWindow.context.MakeVisible("Page3");
+            switch ((sender as Label).Name)
+            {
+                case "Page1":
+                    MainWindow.context.MakeVisible("Page1");
+                    break;
+                case "Page2":
+                    MainWindow.context.MakeVisible("Page2");
+                    break;
+                case "Page3":
+                    MainWindow.context.MakeVisible("Page3");
+                    break;
+                case "Page4":
+                    MainWindow.context.MakeVisible("Page4");
+                    break;
+                case "Quit":
+                    Application.Current.Shutdown();
+                    break;
+            }
         }
-        #endregion
     }
 }
