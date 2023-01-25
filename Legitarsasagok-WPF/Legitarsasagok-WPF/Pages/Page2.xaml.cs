@@ -30,12 +30,55 @@ namespace Legitarsasagok_WPF.Pages
         public Pages2()
         {
             InitializeComponent();
-            Instance = this;  
+            Instance = this;
         }
         public static void Update()
         {
             DataBaseContext db = new DataBaseContext();
-            Instance.DG.ItemsSource = db.RepuloJaratok.ToList();
+            List<RepuloJaratok> data = db.RepuloJaratok.ToList();
+            Instance.DG.ItemsSource = ConvertListTime(data);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<RepuloJaratok> data = new DataBaseContext().RepuloJaratok.ToList();
+            DG.ItemsSource = ConvertListTime(data);
+
+        }
+        public static List<RepuloJaratokTime> ConvertListTime(List<RepuloJaratok> data)
+        {
+            List<RepuloJaratokTime> temp = new List<RepuloJaratokTime>();
+            //foreach (var item in data)
+            //{
+            //    temp.ID = item.ID;
+
+            //    //double calc = (double)item.UtazasiIdo / (double)60;
+            //    //string s = calc.ToString();
+            //    //Console.WriteLine(s);
+
+            //    //item.UtazasiIdo = $"0";
+            //}
+            for (int i = 0; i < data.Count(); i++)
+            {
+                double calc = (double)data[i].UtazasiIdo / (double)60;
+                string s = calc.ToString("#.#");
+                string[] c = s.Split(",");
+                string d1 = c[0] == string.Empty ? "0" : c[0];
+                string d2 = c.Length !=1 ? c[1] : "0";
+                string combine = $"{d1}:{d2}";
+                temp.Add(new RepuloJaratokTime
+                {
+                    ID = data[i].ID,
+                    Legitarsasag = data[i].Legitarsasag,
+                    Honnan = data[i].Honnan,
+                    Hova = data[i].Hova,
+                    Tavolsag = data[i].Tavolsag,
+                    UtazasiIdo = combine,
+                    UtazasiDij = data[i].UtazasiDij
+                });
+                
+            }
+            return temp;
         }
     }
 }
