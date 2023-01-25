@@ -575,10 +575,10 @@ namespace Legitarsasagok_REST_API.Model
             List<Menetrend> ment_data = new List<Menetrend> {};
             foreach (var item in rj_data)
             {
-                DateTime FDT = new DateTime(0, 0, 0, rnd.Next(0, 24),int.Parse(rnd.Next(0, 10).ToString()+"0"),00);
+                DateTime FDT = new DateTime(0, 0, 0, rnd.Next(0, 24),int.Parse(rnd.Next(0, 6).ToString()+"0"),0);
                 int ora = (int)Math.Truncate((double)item.UtazasiIdo / 60);
                 int perc = (int)(item.UtazasiIdo - (ora*60));
-                DateTime LDT = new DateTime(0, 0, 0,FDT.Hour+ora,FDT.Minute+perc,00);
+                DateTime LDT = new DateTime(0, 0, 0,FDT.Hour+ora,FDT.Minute+perc,0);
                 double IFA = 0; 
                 int index = 0;
                 bool megVan = false;
