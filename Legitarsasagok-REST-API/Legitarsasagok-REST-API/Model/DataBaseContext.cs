@@ -573,29 +573,29 @@ namespace Legitarsasagok_REST_API.Model
             #region Menetrend
             int c = 1;
             List<Menetrend> ment_data = new List<Menetrend> {};
-            for (int i = 1; i <= 12; i++)
-            {
-                for (int i = 1; i < length; i++)
-                {
+            //for (int i = 1; i <= 12; i++)
+            //{
+            //    for (int i = 1; i < length; i++)
+            //    {
 
-                }
-            }
-            foreach (var item in rj_data)
-            {
-                if (item.Legitarsasag == "Wizz Air")
-                {
+            //    }
+            //}
+            //foreach (var item in rj_data)
+            //{
+            //    if (item.Legitarsasag == "Wizz Air")
+            //    {
                     
-                    new Menetrend
-                    {
-                        ID = (uint)c++,
-                        RepuloJarat_ID = item.ID,
-                        FelszallasIdopontja = DT,
-                        LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
-                        Ara = 32000,
-                        Ferohely = 320
-                    };
-                }
-            };
+            //        new Menetrend
+            //        {
+            //            ID = (uint)c++,
+            //            RepuloJarat_ID = item.ID,
+            //            FelszallasIdopontja = DT,
+            //            LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
+            //            Ara = 32000,
+            //            Ferohely = 320
+            //        };
+            //    }
+            //};
             modelBuilder.Entity<Menetrend>().HasData(ment_data);                    
             #endregion
         }
