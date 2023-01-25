@@ -50,6 +50,7 @@ namespace Legitarsasagok_REST_API.Controllers
             find.RepuloJarat_ID = value.RepuloJarat_ID;
             find.FelszallasIdopontja = value.FelszallasIdopontja;
             find.LelszallasIdopontja = value.LelszallasIdopontja;
+            find.Tulcsordulas = value.Tulcsordulas;
             find.Ara = value.Ara;
             find.Ferohely = value.Ferohely;
             find.RepuloJaratok = value.RepuloJaratok;

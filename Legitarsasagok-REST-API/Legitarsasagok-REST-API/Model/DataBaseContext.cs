@@ -575,11 +575,29 @@ namespace Legitarsasagok_REST_API.Model
             List<Menetrend> ment_data = new List<Menetrend> {};
             foreach (var item in rj_data)
             {
-                DateTime FDT = new DateTime(0, 0, 0, rnd.Next(0, 24),int.Parse(rnd.Next(0, 6).ToString()+"0"),0);
+                TimeSpan FTS = new TimeSpan( rnd.Next(0, 24),int.Parse(rnd.Next(0, 6).ToString()+"0"),0);
                 int ora = (int)Math.Truncate((double)item.UtazasiIdo / 60);
                 int perc = (int)(item.UtazasiIdo - (ora*60));
-                DateTime LDT = new DateTime(0, 0, 0,FDT.Hour+ora,FDT.Minute+perc,0);
-                double IFA = 0; 
+                int LTS_ora = 0;
+                int LTS_perc = 0;
+                bool Tulcsordult_ora = false;
+                bool Tulcsordult_perc = false;
+                if (FTS.Minutes + perc >= 60)
+                {
+                    LTS_perc = (FTS.Minutes + perc) - 60;
+                    Tulcsordult_perc = true;
+                }
+                if (Tulcsordult_perc)
+                {
+                    ora++;
+                }
+                if (FTS.Hours + ora >= 24)
+                {
+                    LTS_ora = (FTS.Hours + ora) - 24;
+                    Tulcsordult_ora = true;
+                }
+                TimeSpan LTS = new TimeSpan(LTS_ora,LTS_perc,0);
+                double IFA = 0;
                 int index = 0;
                 bool megVan = false;
                 int nepesseg = 0;
@@ -603,17 +621,37 @@ namespace Legitarsasagok_REST_API.Model
                 {
                     IFA = 1.1;
                 }
-                ment_data.Add(
-                new Menetrend
+                if (Tulcsordult_ora)
                 {
-                    ID = (uint)c++,
-                    RepuloJarat_ID = item.ID,
-                    FelszallasIdopontja = FDT,
-                    LelszallasIdopontja = LDT,
-                    Ara = (uint)Math.Truncate(item.Tavolsag * item.UtazasiDij * 1.27 * IFA + (item.Tavolsag / 10)),
-                    Ferohely = (uint)rnd.Next(150, 600)
+                ment_data.Add(
+                    new Menetrend
+                    {
+                        ID = (uint)c++,
+                        RepuloJarat_ID = item.ID,
+                        FelszallasIdopontja = FTS,
+                        LelszallasIdopontja = LTS,
+                        Tulcsordulas = 1,
+                        Ara = (uint)Math.Truncate(item.Tavolsag * item.UtazasiDij * 1.27 * IFA + (item.Tavolsag / 10)),
+                        Ferohely = (uint)rnd.Next(150, 600)
+                    }
+                    );
                 }
-                );
+                else
+                {
+                    ment_data.Add(
+                    new Menetrend
+                    {
+                        ID = (uint)c++,
+                        RepuloJarat_ID = item.ID,
+                        FelszallasIdopontja = FTS,
+                        LelszallasIdopontja = LTS,
+                        Tulcsordulas = 0,
+                        Ara = (uint)Math.Truncate(item.Tavolsag * item.UtazasiDij * 1.27 * IFA + (item.Tavolsag / 10)),
+                        Ferohely = (uint)rnd.Next(150, 600)
+                    }
+                    );
+                }
+                
             };
             modelBuilder.Entity<Menetrend>().HasData(ment_data);                    
             #endregion
