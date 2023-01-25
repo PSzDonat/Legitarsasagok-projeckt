@@ -70,8 +70,8 @@ namespace Legitarsasagok_REST_API.Model
             #endregion
             #region RepuloJaratok
             int b = 1;
-            modelBuilder.Entity<RepuloJaratok>().HasData(
-                    new RepuloJaratok
+            List<RepuloJaratok> rj_data = new List<RepuloJaratok> {
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -471,28 +471,30 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 43,
                         UtazasiDij = 9
                     }
-                );
+            };
+            modelBuilder.Entity<RepuloJaratok>().HasData(rj_data);
             #endregion
             #region Menetrend
             int c = 1;
-            modelBuilder.Entity<Menetrend>().HasData(
-                    new Menetrend
-                    {
-                        ID = (uint)c++,
-                        RepuloJarat_ID = 1,
-                        FelszallasIdopontja = new DateTime(2023, 01, 23, 10,2,40),
-                        LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
-                        Ara = 32000
-                    },
-                    new Menetrend
-                    {
-                        ID = (uint)c++,
-                        RepuloJarat_ID = 2,
-                        FelszallasIdopontja = new DateTime(2023, 01, 23, 10, 2, 40),
-                        LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
-                        Ara = 32000
-                    }
-                );
+            List<Menetrend> ment_data = new List<Menetrend> {
+                new Menetrend
+                {
+                    ID = (uint)c++,
+                    RepuloJarat_ID = 1,
+                    FelszallasIdopontja = new DateTime(2023, 01, 23, 10,2,40),
+                    LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
+                    Ara = 32000
+                },
+                new Menetrend
+                {
+                    ID = (uint)c++,
+                    RepuloJarat_ID = 2,
+                    FelszallasIdopontja = new DateTime(2023, 01, 23, 10, 2, 40),
+                    LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
+                    Ara = 32000
+                }
+            };
+            modelBuilder.Entity<Menetrend>().HasData(ment_data);                    
             #endregion
         }
     }
