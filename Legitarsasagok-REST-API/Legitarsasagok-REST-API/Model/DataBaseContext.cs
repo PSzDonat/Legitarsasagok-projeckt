@@ -14,6 +14,7 @@ namespace Legitarsasagok_REST_API.Model
         public DbSet<Varosok> Varosok { get; set; }
         public DbSet<RepuloJaratok> RepuloJaratok { get; set; }
         public DbSet<Menetrend> Menetrend { get; set; }
+        public Random rnd = new Random();
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
@@ -35,8 +36,9 @@ namespace Legitarsasagok_REST_API.Model
 
             #region Varosok
             int a = 1;
-            modelBuilder.Entity<Varosok>().HasData(
-                    new Varosok
+            List<Varosok> varos_data = new List<Varosok>
+            {
+                new Varosok
                     {
                         ID = (uint)a++,
                         VarosNeve = "Budapest",
@@ -51,7 +53,7 @@ namespace Legitarsasagok_REST_API.Model
                     new Varosok
                     {
                         ID = (uint)a++,
-                        VarosNeve = "Parizs",
+                        VarosNeve = "Párizs",
                         Nepesseg = 2160000
                     },
                     new Varosok
@@ -65,8 +67,21 @@ namespace Legitarsasagok_REST_API.Model
                         ID = (uint)a++,
                         VarosNeve = "Bécs",
                         Nepesseg = 1900000
+                    },
+                    new Varosok
+                    {
+                        ID = (uint)a++,
+                        VarosNeve = "New York",
+                        Nepesseg = 8460000
+                    },
+                    new Varosok
+                    {
+                        ID = (uint)a++,
+                        VarosNeve = "Tokió",
+                        Nepesseg = 13960000
                     }
-                );
+            };
+            modelBuilder.Entity<Varosok>().HasData(varos_data);
             #endregion
             #region RepuloJaratok
             int b = 1;
@@ -79,19 +94,19 @@ namespace Legitarsasagok_REST_API.Model
                         Hova = "London",
                         Tavolsag = 1450,
                         UtazasiIdo = 120,
-                        UtazasiDij = 6
+                        UtazasiDij = 7
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
                         Honnan = "Budapest",
-                        Hova = "Parizs",
+                        Hova = "Párizs",
                         Tavolsag = 1250,
                         UtazasiIdo = 100,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -101,7 +116,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 60,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -111,7 +126,47 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 25,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Wizz Air",
+                        Honnan = "Budapest",
+                        Hova = "New York",
+                        Tavolsag = 7000,
+                        UtazasiIdo = 525,
+                        UtazasiDij = 10
+                    },
+                new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Wizz Air",
+                        Honnan = "Budapest",
+                        Hova = "Tokió",
+                        Tavolsag = 9050,
+                        UtazasiIdo = 680,
+                        UtazasiDij = 11
+                    },
+                new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Wizz Air",
+                        Honnan = "New York",
+                        Hova = "Budapest",
+                        Tavolsag = 7000,
+                        UtazasiIdo = 525,
+                        UtazasiDij = 10
+                    },
+                new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Wizz Air",
+                        Honnan = "Tokió",
+                        Hova = "Budapest",
+                        Tavolsag = 9050,
+                        UtazasiIdo = 680,
+                        UtazasiDij = 11
+                    },
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -121,7 +176,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 120,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -131,7 +186,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 30,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -141,7 +196,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 75,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -151,7 +206,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 100,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -161,7 +216,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 100,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -171,7 +226,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 30,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -181,7 +236,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 70,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -191,7 +246,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 90,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -201,7 +256,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 62,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -211,7 +266,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 73,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -221,7 +276,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 75,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -231,7 +286,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 46,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -241,7 +296,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 25,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -251,7 +306,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 100,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -261,7 +316,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 80,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Wizz Air",
@@ -271,7 +326,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 43,
                         UtazasiDij = 6
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -281,17 +336,17 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 120,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
                         Honnan = "Budapest",
-                        Hova = "Parizs",
+                        Hova = "Párizs",
                         Tavolsag = 1250,
                         UtazasiIdo = 100,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -301,7 +356,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 60,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -311,7 +366,48 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 25,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "London",
+                        Hova = "New York",
+                        Tavolsag = 5570,
+                        UtazasiIdo = 420,
+                        UtazasiDij = 10
+                    },
+                new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "London",
+                        Hova = "Tokió",
+                        Tavolsag = 9560,
+                        UtazasiIdo = 720,
+                        UtazasiDij = 11
+                    },
+
+                new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "New York",
+                        Hova = "London",
+                        Tavolsag = 5570,
+                        UtazasiIdo = 420,
+                        UtazasiDij = 10
+                    },
+                new RepuloJaratok
+                    {
+                        ID = (uint)b++,
+                        Legitarsasag = "Air Atlanta Europe",
+                        Honnan = "Tokió",
+                        Hova = "London",
+                        Tavolsag = 9560,
+                        UtazasiIdo = 720,
+                        UtazasiDij = 11
+                    },
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -321,7 +417,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 120,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -331,7 +427,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 30,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -341,7 +437,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 75,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -351,7 +447,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 100,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -361,7 +457,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 100,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -371,7 +467,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 30,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -381,7 +477,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 70,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -391,7 +487,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 90,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -401,7 +497,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 62,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -411,7 +507,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 73,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -421,7 +517,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 75,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -431,7 +527,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 46,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -441,7 +537,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 25,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -451,7 +547,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 100,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -461,7 +557,7 @@ namespace Legitarsasagok_REST_API.Model
                         UtazasiIdo = 80,
                         UtazasiDij = 9
                     },
-                    new RepuloJaratok
+                new RepuloJaratok
                     {
                         ID = (uint)b++,
                         Legitarsasag = "Air Atlanta Europe",
@@ -476,22 +572,28 @@ namespace Legitarsasagok_REST_API.Model
             #endregion
             #region Menetrend
             int c = 1;
-            List<Menetrend> ment_data = new List<Menetrend> {
-                new Menetrend
+            List<Menetrend> ment_data = new List<Menetrend> {};
+            for (int i = 1; i <= 12; i++)
+            {
+                for (int i = 1; i < length; i++)
                 {
-                    ID = (uint)c++,
-                    RepuloJarat_ID = 1,
-                    FelszallasIdopontja = new DateTime(2023, 01, 23, 10,2,40),
-                    LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
-                    Ara = 32000
-                },
-                new Menetrend
+
+                }
+            }
+            foreach (var item in rj_data)
+            {
+                if (item.Legitarsasag == "Wizz Air")
                 {
-                    ID = (uint)c++,
-                    RepuloJarat_ID = 2,
-                    FelszallasIdopontja = new DateTime(2023, 01, 23, 10, 2, 40),
-                    LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
-                    Ara = 32000
+                    
+                    new Menetrend
+                    {
+                        ID = (uint)c++,
+                        RepuloJarat_ID = item.ID,
+                        FelszallasIdopontja = DT,
+                        LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
+                        Ara = 32000,
+                        Ferohely = 320
+                    };
                 }
             };
             modelBuilder.Entity<Menetrend>().HasData(ment_data);                    

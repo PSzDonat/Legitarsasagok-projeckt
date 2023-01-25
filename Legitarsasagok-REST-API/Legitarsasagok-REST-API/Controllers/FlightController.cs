@@ -51,6 +51,7 @@ namespace Legitarsasagok_REST_API.Controllers
             find.FelszallasIdopontja = value.FelszallasIdopontja;
             find.LelszallasIdopontja = value.LelszallasIdopontja;
             find.Ara = value.Ara;
+            find.Ferohely = value.Ferohely;
             find.RepuloJaratok = value.RepuloJaratok;
             app.SaveChanges();
         }
