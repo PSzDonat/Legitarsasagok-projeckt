@@ -572,29 +572,86 @@ namespace Legitarsasagok_Wpf.Model
             #region Menetrend
             int c = 1;
             List<Menetrend> ment_data = new List<Menetrend> {};
-            //for (int i = 1; i <= 12; i++)
-            //{
-            //    for (int i = 1; i < length; i++)
-            //    {
-
-            //    }
-            //}
-            //foreach (var item in rj_data)
-            //{
-            //    if (item.Legitarsasag == "Wizz Air")
-            //    {
-                    
-            //        new Menetrend
-            //        {
-            //            ID = (uint)c++,
-            //            RepuloJarat_ID = item.ID,
-            //            FelszallasIdopontja = DT,
-            //            LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
-            //            Ara = 32000,
-            //            Ferohely = 320
-            //        };
-            //    }
-            //};
+            foreach (var item in rj_data)
+            {
+                TimeSpan FTS = new TimeSpan( rnd.Next(0, 24),int.Parse(rnd.Next(0, 6).ToString()+"0"),0);
+                int ora = (int)Math.Truncate((double)item.UtazasiIdo / 60);
+                int perc = (int)(item.UtazasiIdo - (ora*60));
+                int LTS_ora = 0;
+                int LTS_perc = 0;
+                bool Tulcsordult_ora = false;
+                bool Tulcsordult_perc = false;
+                if (FTS.Minutes + perc >= 60)
+                {
+                    LTS_perc = (FTS.Minutes + perc) - 60;
+                    Tulcsordult_perc = true;
+                }
+                if (Tulcsordult_perc)
+                {
+                    ora++;
+                }
+                if (FTS.Hours + ora >= 24)
+                {
+                    LTS_ora = (FTS.Hours + ora) - 24;
+                    Tulcsordult_ora = true;
+                }
+                TimeSpan LTS = new TimeSpan(LTS_ora,LTS_perc,0);
+                double IFA = 0;
+                int index = 0;
+                bool megVan = false;
+                int nepesseg = 0;
+                do
+                {
+                    if (item.Hova == varos_data[index].VarosNeve)
+                    {
+                        nepesseg = (int)varos_data[index].Nepesseg;
+                    }
+                    index++;
+                } while (megVan);
+                if (nepesseg < 2000000)
+                {
+                    IFA = 1.05;
+                }
+                else if (nepesseg < 10000000)
+                {
+                    IFA = 1.075;
+                }
+                else
+                {
+                    IFA = 1.1;
+                }
+                if (Tulcsordult_ora)
+                {
+                ment_data.Add(
+                    new Menetrend
+                    {
+                        ID = (uint)c++,
+                        RepuloJarat_ID = item.ID,
+                        FelszallasIdopontja = FTS,
+                        LelszallasIdopontja = LTS,
+                        Tulcsordulas = 1,
+                        Ara = (uint)Math.Truncate(item.Tavolsag * item.UtazasiDij * 1.27 * IFA + (item.Tavolsag / 10)),
+                        Ferohely = (uint)rnd.Next(150, 600)
+                    }
+                    );
+                }
+                else
+                {
+                    ment_data.Add(
+                    new Menetrend
+                    {
+                        ID = (uint)c++,
+                        RepuloJarat_ID = item.ID,
+                        FelszallasIdopontja = FTS,
+                        LelszallasIdopontja = LTS,
+                        Tulcsordulas = 0,
+                        Ara = (uint)Math.Truncate(item.Tavolsag * item.UtazasiDij * 1.27 * IFA + (item.Tavolsag / 10)),
+                        Ferohely = (uint)rnd.Next(150, 600)
+                    }
+                    );
+                }
+                
+            };
             modelBuilder.Entity<Menetrend>().HasData(ment_data);                    
             #endregion
         }
