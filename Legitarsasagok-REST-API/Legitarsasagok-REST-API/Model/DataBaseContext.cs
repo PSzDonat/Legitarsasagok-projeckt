@@ -481,15 +481,15 @@ namespace Legitarsasagok_REST_API.Controllers
                     {
                         ID = (uint)c++,
                         RepuloJarat_ID = 1,
-                        FelszallasIdopontja = new DateTime(2023, 01, 23, 19,2,40),
+                        FelszallasIdopontja = new DateTime(2023, 01, 23, 10,2,40),
                         LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
                         Ara = 32000
                     },
                     new Menetrend
                     {
-                        ID = 2,
+                        ID = (uint)c++,
                         RepuloJarat_ID = 2,
-                        FelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
+                        FelszallasIdopontja = new DateTime(2023, 01, 23, 10, 2, 40),
                         LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
                         Ara = 32000
                     }
