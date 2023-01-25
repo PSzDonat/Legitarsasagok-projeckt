@@ -18,6 +18,6 @@ namespace Legitarsasagok_Wpf.Model
         public uint Tulcsordulas { get; set; }
         public uint Ara { get; set; }
         public uint Ferohely { get; set; }
-        public virtual RepuloJaratok RepuloJaratok { get; set; }
+        //public virtual RepuloJaratok RepuloJaratok { get; set; }
     }
 }
