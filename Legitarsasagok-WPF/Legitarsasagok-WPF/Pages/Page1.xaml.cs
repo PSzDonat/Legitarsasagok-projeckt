@@ -45,6 +45,7 @@ namespace Legitarsasagok_WPF.Pages
                     break;
                 case "Page4":
                     MainWindow.context.MakeVisible("Page4");
+                    Pages2.Instance.bt.Visibility = Visibility.Hidden;
                     break;
                 case "Quit":
                     Application.Current.Shutdown();
