@@ -17,4 +17,16 @@ namespace Legitarsasagok_Wpf.Model
         //public virtual ICollection<Menetrend> Menetrend { get; set; }
         //public virtual Varosok Varosok { get; set; }
     }
+    public class RepuloJaratokTime
+    {
+        public uint ID { get; set; }
+        public string Legitarsasag { get; set; }
+        public string Honnan { get; set; }
+        public string Hova { get; set; }
+        public uint Tavolsag { get; set; }
+        public string UtazasiIdo { get; set; }
+        public uint UtazasiDij { get; set; }
+        //public virtual ICollection<Menetrend> Menetrend { get; set; }
+        //public virtual Varosok Varosok { get; set; }
+    }
 }

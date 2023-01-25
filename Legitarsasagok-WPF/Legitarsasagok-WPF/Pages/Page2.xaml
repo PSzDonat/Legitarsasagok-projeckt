@@ -9,6 +9,10 @@
       Title="Page2">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF595C9F" Offset="0"/>
@@ -17,7 +21,15 @@
                 <GradientStop Color="#FF29174C" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <DataGrid Margin="25" Name="DG" RowHeight="30" ColumnWidth="100">
+        <StackPanel Orientation="Horizontal" >
+            <Button Name="bt" Width="230" Margin="10" FontSize="30" Click="Button_Click">
+                Refresh
+            </Button>
+            <Label Margin="10" FontSize="30">
+                Esc to exit.
+            </Label>
+        </StackPanel>
+        <DataGrid Margin="25" Name="DG" Grid.Row="1" RowHeight="30" ColumnWidth="100" IsReadOnly="True">
             
         </DataGrid>
     </Grid>
