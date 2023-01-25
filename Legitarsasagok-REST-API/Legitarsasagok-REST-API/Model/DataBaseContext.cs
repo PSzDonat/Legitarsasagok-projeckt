@@ -573,29 +573,48 @@ namespace Legitarsasagok_REST_API.Model
             #region Menetrend
             int c = 1;
             List<Menetrend> ment_data = new List<Menetrend> {};
-            //for (int i = 1; i <= 12; i++)
-            //{
-            //    for (int i = 1; i < length; i++)
-            //    {
-
-            //    }
-            //}
-            //foreach (var item in rj_data)
-            //{
-            //    if (item.Legitarsasag == "Wizz Air")
-            //    {
-                    
-            //        new Menetrend
-            //        {
-            //            ID = (uint)c++,
-            //            RepuloJarat_ID = item.ID,
-            //            FelszallasIdopontja = DT,
-            //            LelszallasIdopontja = new DateTime(2023, 01, 23, 19, 2, 40),
-            //            Ara = 32000,
-            //            Ferohely = 320
-            //        };
-            //    }
-            //};
+            foreach (var item in rj_data)
+            {
+                DateTime FDT = new DateTime(0, 0, 0, rnd.Next(0, 24),int.Parse(rnd.Next(0, 10).ToString()+"0"),00);
+                int ora = (int)Math.Truncate((double)item.UtazasiIdo / 60);
+                int perc = (int)(item.UtazasiIdo - (ora*60));
+                DateTime LDT = new DateTime(0, 0, 0,FDT.Hour+ora,FDT.Minute+perc,00);
+                double IFA = 0; 
+                int index = 0;
+                bool megVan = false;
+                int nepesseg = 0;
+                do
+                {
+                    if (item.Hova == varos_data[index].VarosNeve)
+                    {
+                        nepesseg = (int)varos_data[index].Nepesseg;
+                    }
+                    index++;
+                } while (megVan);
+                if (nepesseg < 2000000)
+                {
+                    IFA = 1.05;
+                }
+                else if (nepesseg < 10000000)
+                {
+                    IFA = 1.075;
+                }
+                else
+                {
+                    IFA = 1.1;
+                }
+                ment_data.Add(
+                new Menetrend
+                {
+                    ID = (uint)c++,
+                    RepuloJarat_ID = item.ID,
+                    FelszallasIdopontja = FDT,
+                    LelszallasIdopontja = LDT,
+                    Ara = (uint)Math.Truncate(item.Tavolsag * item.UtazasiDij * 1.27 * IFA + (item.Tavolsag / 10)),
+                    Ferohely = (uint)rnd.Next(150, 600)
+                }
+                );
+            };
             modelBuilder.Entity<Menetrend>().HasData(ment_data);                    
             #endregion
         }
