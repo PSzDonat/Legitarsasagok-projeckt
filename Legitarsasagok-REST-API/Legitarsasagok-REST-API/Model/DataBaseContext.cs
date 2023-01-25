@@ -270,8 +270,7 @@ namespace Legitarsasagok_REST_API.Controllers
                         Tavolsag = 520,
                         UtazasiIdo = 43,
                         UtazasiDij = 6
-                    }
-
+                    },
                     new RepuloJaratok
                     {
                         ID = (uint)b++,
