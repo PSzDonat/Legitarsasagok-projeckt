@@ -48,16 +48,6 @@ namespace Legitarsasagok_WPF.Pages
         public static List<RepuloJaratokTime> ConvertListTime(List<RepuloJaratok> data)
         {
             List<RepuloJaratokTime> temp = new List<RepuloJaratokTime>();
-            //foreach (var item in data)
-            //{
-            //    temp.ID = item.ID;
-
-            //    //double calc = (double)item.UtazasiIdo / (double)60;
-            //    //string s = calc.ToString();
-            //    //Console.WriteLine(s);
-
-            //    //item.UtazasiIdo = $"0";
-            //}
             for (int i = 0; i < data.Count(); i++)
             {
                 double calc = (double)data[i].UtazasiIdo / (double)60;

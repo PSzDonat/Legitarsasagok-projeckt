@@ -32,7 +32,7 @@
                 <GradientStop Color="#FF29174C" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Label Content="Repülő járatok" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="30"/>
+        <Label Content="Repülő járatok keresése" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="30"/>
         
         <Label Content="Kiindulási város:" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="16"/>
         <ComboBox Name="CB1" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1"  Width="180" FontSize="20" Margin="0,5,0,5" DropDownClosed="CB1_DropDownClosed"/>
