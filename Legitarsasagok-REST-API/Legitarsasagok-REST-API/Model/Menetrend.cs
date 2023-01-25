@@ -15,6 +15,7 @@ namespace Legitarsasagok_REST_API.Model
         [Column("LelszallasIdopontja ", TypeName = "Date")]
         public DateTime LelszallasIdopontja { get; set; }
         public uint Ara { get; set; }
+        public uint Ferohely { get; set; }
         public virtual RepuloJaratok RepuloJaratok { get; set; }
     }
 }
