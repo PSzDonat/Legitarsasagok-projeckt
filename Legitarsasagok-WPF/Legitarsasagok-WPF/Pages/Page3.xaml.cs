@@ -18,9 +18,9 @@ namespace Legitarsasagok_WPF.Pages
     /// <summary>
     /// Interaction logic for Page3.xaml
     /// </summary>
-    public partial class Page3 : Page
+    public partial class Pages3 : Page
     {
-        public Page3()
+        public Pages3()
         {
             InitializeComponent();
         }

@@ -12,15 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Legitarsasagok_Wpf.Model;
+using Legitarsasagok_WPF.Pages;
 
 namespace Legitarsasagok_WPF.Pages
 {
     /// <summary>
     /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Pages1 : Page
     {
-        public Page1()
+        public Pages1()
         {
             InitializeComponent();
         }
@@ -29,11 +31,12 @@ namespace Legitarsasagok_WPF.Pages
         {
             switch ((sender as Label).Name)
             {
-                case "Page1":
+                case "Page1": 
                     MainWindow.context.MakeVisible("Page1");
                     break;
                 case "Page2":
                     MainWindow.context.MakeVisible("Page2");
+                    Pages2.Update();
                     break;
                 case "Page3":
                     MainWindow.context.MakeVisible("Page3");
