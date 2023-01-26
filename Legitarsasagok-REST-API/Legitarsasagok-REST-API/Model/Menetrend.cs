@@ -19,5 +19,8 @@ namespace Legitarsasagok_REST_API.Model
         public uint Ara { get; set; }
         public uint Ferohely { get; set; }
         public virtual RepuloJaratok RepuloJaratok { get; set; }
+        public virtual ICollection<Foglalasok> Foglalasok { get; set; }
+
+        
     }
 }

@@ -14,6 +14,8 @@ namespace Legitarsasagok_REST_API.Model
         public DbSet<Varosok> Varosok { get; set; }
         public DbSet<RepuloJaratok> RepuloJaratok { get; set; }
         public DbSet<Menetrend> Menetrend { get; set; }
+        public DbSet<Foglalasok> Foglalasok { get; set; }
+
         public Random rnd = new Random();
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -33,6 +35,8 @@ namespace Legitarsasagok_REST_API.Model
             //modelBuilder.Entity<RepuloJaratok>().HasMany(x => x.Menetrend).WithOne(x=>x.RepuloJaratok);
 
             modelBuilder.Entity<Menetrend>().HasOne(x => x.RepuloJaratok).WithMany(x => x.Menetrend);
+
+            modelBuilder.Entity<Menetrend>().HasMany(x => x.Foglalasok).WithOne(x => x.Menetrend);
 
             #region Varosok
             int a = 1;
@@ -653,8 +657,30 @@ namespace Legitarsasagok_REST_API.Model
                 }
                 
             };
-            modelBuilder.Entity<Menetrend>().HasData(ment_data);                    
+            modelBuilder.Entity<Menetrend>().HasData(ment_data);
             #endregion
+            //#region Foglalasok
+            //int m = 0;
+            //List<Foglalasok> fog_data = new List<Foglalasok> {};
+            //foreach (var item in ment_data)
+            //{
+            //    fog_data.Add(new Foglalasok {
+            //        ID = (uint)m++,
+            //        Menetrend_ID = item.ID,
+            //        JaratDatuma = new DateTime(2023, rnd.Next(1,12), rnd.Next(1, 27), item.FelszallasIdopontja.Hours,item.FelszallasIdopontja.Minutes,item.FelszallasIdopontja.Seconds),
+            //        FoglaltHelyek = 0,
+            //        FoglalasokOsszege = 0
+            //    });
+            //    fog_data.Add(new Foglalasok {
+            //        ID = (uint)m++,
+            //        Menetrend_ID = item.ID,
+            //        JaratDatuma = new DateTime(2023, rnd.Next(1,12), rnd.Next(1, 27), item.FelszallasIdopontja.Hours,item.FelszallasIdopontja.Minutes,item.FelszallasIdopontja.Seconds),
+            //        FoglaltHelyek = 0,
+            //        FoglalasokOsszege = 0
+            //    });
+            //}
+            //modelBuilder.Entity<Foglalasok>().HasData(fog_data);
+            //#endregion
         }
     }
 }
