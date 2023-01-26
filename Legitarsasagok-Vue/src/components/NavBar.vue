@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-sm nav-bg">
+  <nav class="navbar navbar-expand-sm nav-bg fixed-top ">
     <div class="container-fluid">
       <a class="navbar-brand" href="/"><img id="nav-icon" height="40" width="40" src="@icon/icofont/icons/ui-flight.svg" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,12 +30,12 @@ export default {
 
 <style scoped>
 .nav-bg{
-  background-color: #55acc6;
+  background-color: rgb(62, 210, 230);
 }
 nav li:hover {
-  text-shadow: 2px 2px 25px darkblue;
+  text-shadow: 2px 2px 25px rgb(0, 0, 138,);
 }
-nav li:active{
+.nav-link:active{
   text-shadow: 2px 2px 10px rgb(0, 91, 177);
 }
 </style>
