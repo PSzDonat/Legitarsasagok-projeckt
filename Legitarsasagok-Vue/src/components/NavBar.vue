@@ -1,23 +1,22 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar navbar-expand-sm nav-bg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="/"><img id="nav-icon" height="40" width="40" src="@icon/icofont/icons/ui-flight.svg" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <router-link class="nav-link active" to="">Home</router-link>
+            <router-link class="nav-link" exact-active-class="active" to="/">Kezdőoldal</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="#">Link</router-link>
+            <router-link class="nav-link" exact-active-class="active" to="/Foglalas">Jegy fogalalás</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" exact-active-class="active" to="/Osszegzo">Foglalás összegzés</router-link>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
@@ -30,5 +29,13 @@ export default {
 </script>
 
 <style scoped>
-
+.nav-bg{
+  background-color: #55acc6;
+}
+nav li:hover {
+  text-shadow: 2px 2px 25px darkblue;
+}
+nav li:active{
+  text-shadow: 2px 2px 10px rgb(0, 91, 177);
+}
 </style>
