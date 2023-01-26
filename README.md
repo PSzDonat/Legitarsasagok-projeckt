@@ -27,6 +27,12 @@ Rest Api:
 2) Open `Legitarsasagok-REST-API` in Visual Studio
 3) Run it in `IIS Express` | :warning: Do not run it in `Docker`!
 
+Back End Unit test:
+
+1) Open `Legitarsasagok-REST-API` in Visual Studio
+2) Open `Test Explorer` by going to `View>Test Explorer`
+3) Press `Run`
+
 Vue:
 
 0) Requires `Rest Api`
