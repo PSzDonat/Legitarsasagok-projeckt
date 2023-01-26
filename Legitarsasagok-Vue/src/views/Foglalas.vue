@@ -2,19 +2,35 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col align-self-center">
-        <form class=" border p-5 rounded">
+        <h1 class="text-center mt-2">Jegy Lefoglalása</h1>
+        <form class="mt-3 border p-5 rounded">
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="Honnan">Honnan:</label>
+            <select class="form-select" id="RepuloJaratok">
+              
+            </select>
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="Hova">Hova:</label>
+            <select class="form-select" id="RepuloJaratok">
+              
+            </select>
           </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">16 év alatti gyerek</label>
+          <div class="mb-3">
+            <label for="RepuloJaratok" class="mb-1">Repülőjáratok:</label>
+            <select class="form-select" id="RepuloJaratok">
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="IndulasiIdo">Indulás Dátuma:</label>
+            <input type="datetime-local" id="IndulasiIdo" v-model="dateNow" :min="dateNow" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="Utassam">Utassam</label>
+            <input id="Utassam" type="number" class="form-control">
           </div>
           <button type="submit" class="btn btn-primary">Foglalas</button>
         </form>
@@ -24,8 +40,24 @@
 </template>
 
 <script>
+import {Servers} from "../assets/js/Servers.mjs";
 export default {
-  name: "TravelTo"
+  name: "TravelTo",
+  data() {
+    return {
+      "dateNow" : "",
+      "orszagok" : Array()
+    }
+  },
+  mounted() {
+
+
+    const dateAndTime = new Date().toISOString().split('T');
+    const time = dateAndTime[1].split(':');
+  
+    this.dateNow = dateAndTime[0]+'T'+time[0]+':'+time[1]+':'+time[2].split('.')[0];
+    let Api_City = fetch(Servers.find(x=>x.Name == "RestApi").Ip+"cities");
+  }
 }
 </script>
 
