@@ -1,5 +1,5 @@
 <template>
-
+  <h1>Foglalas</h1>
 </template>
 
 <script>
