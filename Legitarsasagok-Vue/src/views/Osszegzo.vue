@@ -1,5 +1,5 @@
 <template>
-
+  <h1>Osszegzo</h1>
 </template>
 
 <script>
