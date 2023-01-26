@@ -580,8 +580,8 @@ namespace Legitarsasagok_REST_API.Model
             foreach (var item in rj_data)
             {
                 TimeSpan FTS = new TimeSpan( rnd.Next(0, 24),int.Parse(rnd.Next(0, 6).ToString()+"0"),0);
-                int ora = (int)Math.Truncate((double)item.UtazasiIdo / 60);
-                int perc = (int)(item.UtazasiIdo - (ora*60));
+                int ora = (int)Calculate.CalcOra(item.UtazasiIdo);
+                int perc = (int)Calculate.CalcPerc(item.UtazasiIdo, ora);
                 int LTS_ora = 0;
                 int LTS_perc = 0;
                 bool Tulcsordult_ora = false;
@@ -635,7 +635,7 @@ namespace Legitarsasagok_REST_API.Model
                         FelszallasIdopontja = FTS,
                         LelszallasIdopontja = LTS,
                         Tulcsordulas = 1,
-                        Ara = (uint)Math.Truncate(item.Tavolsag * item.UtazasiDij * 1.27 * IFA + (item.Tavolsag / 10)),
+                        Ara = (uint)Calculate.CalcPrice(item.Tavolsag,item.UtazasiDij,IFA),
                         Ferohely = (uint)rnd.Next(150, 600)
                     }
                     );
@@ -650,7 +650,7 @@ namespace Legitarsasagok_REST_API.Model
                         FelszallasIdopontja = FTS,
                         LelszallasIdopontja = LTS,
                         Tulcsordulas = 0,
-                        Ara = (uint)Math.Truncate(item.Tavolsag * item.UtazasiDij * 1.27 * IFA + (item.Tavolsag / 10)),
+                        Ara = (uint)Calculate.CalcPrice(item.Tavolsag, item.UtazasiDij, IFA),
                         Ferohely = (uint)rnd.Next(150, 600)
                     }
                     );
@@ -659,7 +659,7 @@ namespace Legitarsasagok_REST_API.Model
             };
             modelBuilder.Entity<Menetrend>().HasData(ment_data);
             #endregion
-            //#region Foglalasok
+            #region Foglalasok
             //int m = 0;
             //List<Foglalasok> fog_data = new List<Foglalasok> {};
             //foreach (var item in ment_data)
@@ -680,7 +680,25 @@ namespace Legitarsasagok_REST_API.Model
             //    });
             //}
             //modelBuilder.Entity<Foglalasok>().HasData(fog_data);
-            //#endregion
+            #endregion
+        }
+    }
+    public static class Calculate
+    {
+        //int ora = (int)Math.Truncate((double)item.UtazasiIdo / 60);
+        public static int CalcOra(uint UtazasiIdo)
+        {
+            return (int)Math.Truncate((double)UtazasiIdo / 60);
+        }
+        //int perc = (int)(item.UtazasiIdo - (ora*60));
+        public static int CalcPerc(uint UtazasiIdo,int Ora)
+        {
+            return (int)(UtazasiIdo - (Ora * 60));
+        }
+        //Ara = (uint)Math.Truncate(item.Tavolsag * item.UtazasiDij * 1.27 * IFA + (item.Tavolsag / 10)),
+        public static uint CalcPrice(uint Tavolsag,uint UtazasiDij, double IFA)
+        {
+            return (uint)Math.Truncate(Tavolsag * UtazasiDij * 1.27 * IFA + (Tavolsag / 10));
         }
     }
 }
