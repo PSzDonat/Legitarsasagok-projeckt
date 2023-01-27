@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="0.13*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.Background>
@@ -22,10 +22,10 @@
             </LinearGradientBrush>
         </Grid.Background>
         <StackPanel Orientation="Horizontal" >
-            <Button Name="bt" Width="230" Margin="10" FontSize="30" Click="Button_Click">
+            <Button Name="bt" Width="100" Margin="10" FontSize="15" Click="Button_Click">
                 Refresh
             </Button>
-            <Label Margin="10" FontSize="30">
+            <Label Margin="10" FontSize="15">
                 Esc to exit.
             </Label>
         </StackPanel>

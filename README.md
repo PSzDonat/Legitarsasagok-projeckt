@@ -1,5 +1,14 @@
 # Legitarsasagok-projeckt
 
+### Dokumentáció:
+
+#### Célja:
+        Egyes városok kzötti közvetlen repülőjáratokra helyfoglalásra/jegyvásárlásra nyújt lehetőséget a weboldal. Az asztali alkalmazás az az adatbázisban szereplő repülőjáratok kilistázására és megadott városok közötti szűrésre nyújt lehetőséget 
+#### WPF: 
+    A Wpf kezdő oldalán 
+    
+
+
 ### Run/Build
 
 Wpf:
