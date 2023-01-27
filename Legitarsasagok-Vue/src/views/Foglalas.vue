@@ -135,8 +135,6 @@ export default {
     },
     selectRepuloJarat(index) {
       let temp = this.Data_Reservations.filter(x=>x.menetrend_ID == index+1);
-      console.log(index);
-      console.log(temp);
       if (temp.length != 0) {
         this.letezik = true;
         this.foglaltHelyek = temp[0].foglaltHelyek;
