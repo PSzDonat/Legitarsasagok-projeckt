@@ -56,11 +56,8 @@
               <td>{{item.tavolsag}} Km</td>
               <td>{{item.utazasiIdo}}</td>
               <td>{{this.Data_Flight[index].ara}}</td>
-              <td v-if="ferohely != foglaltHelyek">
+              <td>
                 <a class="btn btn-primary" @click="selectRepuloJarat(item.id)">Vétel</a>
-              </td>
-              <td v-if="ferohely == foglaltHelyek">
-                Nincs több hely
               </td>
             </tr>
           </tbody>
