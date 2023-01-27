@@ -3,15 +3,13 @@
     <div class="row align-items-center justify-content-center">
         <div class="text-center" id="mid">
           <h1>Utaznál valahova?</h1>
-          <h2>Repülőven gondolkozol?</h2>
-          <div id="list">
-            <ul>
-              <li>Népszerű</li>
-              <li>Kényelmes</li>
-              <li>Jól felszerelt járataink</li>
-              <li>Pénztárca kímélő árakkal</li>
-            </ul>
-          </div>
+          <h2>Repülővel gondolkozol?</h2>
+          <ul>
+            <li>Népszerű</li>
+            <li>Kényelmes</li>
+            <li>Jól felszerelt járataink</li>
+            <li>Pénztárca kímélő árakkal</li>
+          </ul>
           <h4>Gyere foglalj helyet járatunkon!</h4>
           <router-link class="btn btn-outline-dark" id="button" to="/Foglalas">Fogallás</router-link>
         </div>
@@ -54,8 +52,7 @@ h4{
 ul{
   margin: 2rem;
   text-align: left;
-}
-#list{
   width: 20rem;
+  margin-left: 30%;
 }
 </style>

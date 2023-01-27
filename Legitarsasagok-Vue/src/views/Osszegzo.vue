@@ -1,5 +1,7 @@
 <template>
-  <h1>Osszegzo</h1>
+  <div class="container-fluid"> 
+    
+  </div>
 </template>
 
 <script>
@@ -9,5 +11,8 @@ export default {
 </script>
 
 <style scoped>
-
+.container-fluid{
+  height: 100vh;
+  margin-top: 60px;
+}
 </style>
