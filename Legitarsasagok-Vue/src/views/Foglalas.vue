@@ -55,7 +55,7 @@
               <td>{{item.hova}}</td>
               <td>{{item.tavolsag}} Km</td>
               <td>{{item.utazasiIdo}}</td>
-              <td>{{this.Data_Flight[index].ara}}</td>
+              <td>{{this.Data_Flight[item.id-1].ara}}</td>
               <td>
                 <button class="btn btn-primary" @click="selectRepuloJarat(item.id)">Vétel</button>
               </td>
@@ -142,8 +142,9 @@ export default {
         this.jaratDatuma = temp[0].jaratDatuma;
       }
       this.selected_id = index+1;
-      this.ara = this.Data_Flight[index].ara;
-      this.ferohely = this.Data_Flight[index].ferohely;
+      this.ara = this.Data_Flight[index-1].ara;
+      this.ferohely = this.Data_Flight[index-1].ferohely;
+      console.log(this.ara);
       this.toNextPage()
     },
     foglalas() {
