@@ -577,21 +577,29 @@ namespace Legitarsasagok_REST_API.Model
             #region Menetrend
             int c = 1;
             List<Menetrend> ment_data = new List<Menetrend> {};
+            int LTS_ora = 0;
+            int LTS_perc = 0;
+            bool Tulcsordult_ora = false;
+            bool Tulcsordult_perc = false;
+            double IFA = 0;
+            int index = 0;
+            bool megVan = true;
+            int nepesseg = 0;
             foreach (var item in rj_data)
             {
                 TimeSpan FTS = new TimeSpan( rnd.Next(0, 24),int.Parse(rnd.Next(0, 6).ToString()+"0"),0);
                 int ora = (int)Calculate.CalcOra(item.UtazasiIdo);
                 int perc = (int)Calculate.CalcPerc(item.UtazasiIdo, ora);
-                int LTS_ora = 0;
-                int LTS_perc = 0;
-                bool Tulcsordult_ora = false;
-                bool Tulcsordult_perc = false;
+                LTS_ora = 0;
+                LTS_perc = 0;
+                Tulcsordult_ora = false;
+                Tulcsordult_perc = false;
                 if (FTS.Minutes + perc >= 60)
                 {
                     LTS_perc = (FTS.Minutes + perc) - 60;
                     Tulcsordult_perc = true;
                 }
-                if (Tulcsordult_perc)
+                if (Tulcsordult_perc == true)
                 {
                     ora++;
                 }
@@ -601,18 +609,19 @@ namespace Legitarsasagok_REST_API.Model
                     Tulcsordult_ora = true;
                 }
                 TimeSpan LTS = new TimeSpan(LTS_ora,LTS_perc,0);
-                double IFA = 0;
-                int index = 0;
-                bool megVan = false;
-                int nepesseg = 0;
+                IFA = 0;
+                index = 0;
+                megVan = false;
+                nepesseg = 0;
                 do
                 {
                     if (item.Hova == varos_data[index].VarosNeve)
                     {
                         nepesseg = (int)varos_data[index].Nepesseg;
+                        megVan = true;
                     }
                     index++;
-                } while (megVan);
+                } while (megVan == false);
                 if (nepesseg < 2000000)
                 {
                     IFA = 1.05;
