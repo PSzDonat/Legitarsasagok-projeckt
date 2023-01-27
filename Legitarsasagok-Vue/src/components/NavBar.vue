@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 .nav-bg{
-  background: linear-gradient(90deg, rgba(0,207,194,1) 0%, rgba(22,60,135,1) 100%);
+  background: linear-gradient(90deg, rgba(0,207,194,1) 51%, rgba(22,60,135,1) 100%);
   color: ;
 }
 .nav-link:hover {

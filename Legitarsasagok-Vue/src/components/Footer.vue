@@ -20,7 +20,7 @@ export default {
 <style scoped>
 .container-fluid{
     height: auto;
-    background: linear-gradient(90deg, rgba(0,207,194,1) 0%, rgba(22,60,135,1) 100%);
+    background: linear-gradient(90deg, rgba(22,60,135,1) 0%, rgba(0,207,194,1) 14%, rgba(0,207,194,1) 79%, rgba(22,60,135,1) 100%);
 }
 ul{
     list-style: none;

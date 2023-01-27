@@ -11,7 +11,7 @@
             <li>Pénztárca kímélő árakkal</li>
           </ul>
           <h4>Gyere foglalj helyet járatunkon!</h4>
-          <router-link class="btn btn-outline-dark" id="button" to="/Foglalas">Fogallás</router-link>
+          <router-link class="btn btn-outline-dark" id="button" to="/Foglalas">Foglalás</router-link>
         </div>
     </div>
   </div>
