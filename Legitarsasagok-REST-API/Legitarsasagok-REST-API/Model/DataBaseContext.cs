@@ -591,7 +591,7 @@ namespace Legitarsasagok_REST_API.Model
                     LTS_perc = (FTS.Minutes + perc) - 60;
                     Tulcsordult_perc = true;
                 }
-                if (Tulcsordult_perc)
+                if (Tulcsordult_perc == true)
                 {
                     ora++;
                 }
@@ -603,13 +603,14 @@ namespace Legitarsasagok_REST_API.Model
                 TimeSpan LTS = new TimeSpan(LTS_ora,LTS_perc,0);
                 double IFA = 0;
                 int index = 0;
-                bool megVan = false;
+                bool megVan = true;
                 int nepesseg = 0;
                 do
                 {
                     if (item.Hova == varos_data[index].VarosNeve)
                     {
                         nepesseg = (int)varos_data[index].Nepesseg;
+                        megVan = false;
                     }
                     index++;
                 } while (megVan);
