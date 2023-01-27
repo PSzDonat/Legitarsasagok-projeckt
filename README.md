@@ -5,7 +5,15 @@
 #### Célja:
         Egyes városok kzötti közvetlen repülőjáratokra helyfoglalásra/jegyvásárlásra nyújt lehetőséget a weboldal. Az asztali alkalmazás az az adatbázisban szereplő repülőjáratok kilistázására és megadott városok közötti szűrésre nyújt lehetőséget 
 #### WPF: 
-    A Wpf kezdő oldalán 
+        A Wpf kezdő oldalán kilehet választani hogy hogyan szeretnénk kilistázni a járatokat
+    Mint a nevében is benne van 
+        az első menüpontal az összes járatot kilistázzuk
+        a másodikkal két város közötti közvetlen járatot listázzuk ki 
+        a harmadikal pedig lehetőségünk van átszállással is keresni
+    A második éás harmadik menüpont átírányít egy szűrő oldalra ahol ki lehet választani a kiindulási várost és a célvárost
+#### Vue:
+    A weboldal megnyitásakor bedob minket egy kezdő oldalra, ahol van egy foglalás gomb ami átirányít minket a foglalási oldalra ahol hylet tudunk foglalni akár több főre is. 
+    A menüsávaban található harmadik menüpont egy olyan oldalra dob minket ahol az eddig i foglalási adatokat láthajuk.
     
 
 
