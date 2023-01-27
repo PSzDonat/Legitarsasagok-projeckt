@@ -144,7 +144,6 @@ export default {
       this.selected_id = index+1;
       this.ara = this.Data_Flight[index-1].ara;
       this.ferohely = this.Data_Flight[index-1].ferohely;
-      console.log(this.ara);
       this.toNextPage()
     },
     foglalas() {
