@@ -20,6 +20,10 @@
               <option v-for="(item, index) in Data_City" :key="index" :value="item.varosNeve">{{item.varosNeve}}</option>
             </select>
           </div>
+          <div class="mb-3">
+            <label for="IndulasiIdo" class="">Indulás Dátuma:</label>
+            <input type="datetime-local" id="IndulasiIdo" v-model="date" :min="date" class="form-control mt-1">
+          </div>
 
           <a class="btn btn-primary" @click="toNextPage" >Következö</a>
         </form>
@@ -52,8 +56,11 @@
               <td>{{item.tavolsag}} Km</td>
               <td>{{item.utazasiIdo}}</td>
               <td>{{this.Data_Flight[index].ara}}</td>
-              <td>
-                <a class="btn btn-primary" @click="selectRepuloJarat(index)">Vétel</a>
+              <td v-if="ferohely != foglaltHelyek">
+                <a class="btn btn-primary" @click="selectRepuloJarat(item.id)">Vétel</a>
+              </td>
+              <td v-if="ferohely == foglaltHelyek">
+                Nincs több hely
               </td>
             </tr>
           </tbody>
@@ -62,9 +69,29 @@
       </div>
       <!--Page3-->
       <div class="col align-self-center" v-if="pVisible == 2">
-
+        <form class="mt-3 border p-5 rounded">
+          <div class="mb-3">
+            <label for="utasokszama">Utasok Száma:</label>
+            <input min="0" :max="ferohely-foglaltHelyek" v-model="utasokSzama" type="number" name="utasokszama" id="utasokszama" class="form-control mt-1">
+            <div class="d-flex justify-content-between align-items-center">
+              <a class="btn btn-primary mt-3" @click="foglalas">Vásárlás</a>
+              <h4 class="m-0"><span class="badge bg-secondary">{{this.calculatePrice}} Ft</span></h4>
+            </div>
+          </div>
+        </form>
+        <div class="alert alert-warning mt-3" role="alert" v-if="utasokSzama <= -1">
+          Minusz számú utas nem lehet !
+        </div>
+        <div class="alert alert-warning mt-3" role="alert" v-if="utasokSzama > ferohely-foglaltHelyek">
+          Több jegyet nem tutsz venni !
+        </div>
       </div>
-
+      <!--Page3-->
+      <div class="col align-self-center" v-if="pVisible == 3">
+        <div class="alert alert-success mt-3 text-center">
+          Vásárlás sikeres! Köszönjük a vásárlást.
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -77,6 +104,7 @@ export default {
     return {
       //page1
       "pVisible" : 0,
+      "date" : "",
       "varosSelect1":"",
       "varosSelect2":"",
       //page2
@@ -88,6 +116,11 @@ export default {
       "ferohely" : -1,
       "foglaltHelyek" : 0,
       "foglalasokOsszege" : 0,
+      "jaratDatuma" : "",
+      //page3
+      "utasokSzama": 0,
+      "kiszamolAra" : 0,
+
       //api
       "ServerIp": Servers.find(x=>x.Name == "RestApi").Ip,
       "Data_City": [],
@@ -100,22 +133,70 @@ export default {
     toNextPage() {
       if (this.pVisible == 0 && this.varosSelect1 == '' || this.varosSelect2 == '') return;
       if (this.pVisible == 0 && this.ifSameVaros || this.ifDosentHaveUtazasiLehetoseg) return;
-
       this.filter_Data_Airline = this.Data_Airline.filter(x=>x.honnan == this.varosSelect1 && x.hova == this.varosSelect2);
       this.pVisible++;
     },
     selectRepuloJarat(index) {
-      let temp = this.Data_Reservations.find(x=>x.menetrend_ID = index+1);
+      let temp = this.Data_Reservations.filter(x=>x.menetrend_ID == index+1);
+      console.log(index);
       console.log(temp);
-      if (temp != undefined) {
+      if (temp.length != 0) {
         this.letezik = true;
-        this.foglaltHelyek = temp.foglaltHelyek;
-        this.foglalasokOsszege = temp.foglalasokOsszege;
+        this.foglaltHelyek = temp[0].foglaltHelyek;
+        this.foglalasokOsszege = temp[0].foglalasokOsszege;
+        this.jaratDatuma = temp[0].jaratDatuma;
       }
       this.selected_id = index+1;
       this.ara = this.Data_Flight[index].ara;
       this.ferohely = this.Data_Flight[index].ferohely;
       this.toNextPage()
+    },
+    foglalas() {
+      //validate
+      if (this.utasokSzama <= -1 ) {
+        return;
+      }
+      if (this.utasokSzama > this.ferohely-this.foglaltHelyek) {
+        return;
+      }
+      if (this.letezik) {
+        this.putReservations(this.selected_id,this.utasokSzama,this.kiszamolAra);
+      }
+      else {
+        this.postReservations(this.selected_id,this.date,this.utasokSzama,this.kiszamolAra);
+      }
+      this.pVisible++;
+    },
+    postReservations(menetrend_ID,jaratDatuma,foglaltHelyek,foglalasokOsszege) {
+      fetch(this.ServerIp+"reservations", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "id": menetrend_ID,
+          "menetrend_ID" : menetrend_ID,
+          "jaratDatuma" : jaratDatuma,
+          "foglaltHelyek" : foglaltHelyek,
+          "foglalasokOsszege" : foglalasokOsszege,
+          "menetrend" : null
+        })
+      });
+    },
+    putReservations(menetrend_ID,foglaltHelyek,foglalasokOsszege) {
+      fetch(this.ServerIp+"reservations/"+menetrend_ID, {
+        method: "PUT",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "menetrend_ID" : menetrend_ID,
+          "jaratDatuma" : this.jaratDatuma,
+          "foglaltHelyek" : this.foglaltHelyek+foglaltHelyek,
+          "foglalasokOsszege" : this.foglalasokOsszege+foglalasokOsszege,
+          "menetrend" : null
+        })
+      });
     }
   },
   computed: {
@@ -125,6 +206,13 @@ export default {
     ifDosentHaveUtazasiLehetoseg() {
       let temp = this.Data_Airline.filter(x=>x.honnan == this.varosSelect1 && x.hova == this.varosSelect2);
       return this.varosSelect1 !='' && this.varosSelect2!='' && this.varosSelect1 != this.varosSelect2 && temp.length == 0;
+    },
+    calculatePrice() {
+      if (this.utasokSzama == 0 || this.utasokSzama <= -1 ) {
+        return 0;
+      }
+      this.kiszamolAra = this.utasokSzama*this.ara;
+      return this.kiszamolAra;
     }
   },
   async mounted() {
@@ -133,6 +221,10 @@ export default {
     await fetch(this.ServerIp+"flights").then(x=>x.json()).then(x=>this.Data_Flight = x);
     await fetch(this.ServerIp+"reservations").then(x=>x.json()).then(x=>this.Data_Reservations = x);
 
+    const dateAndTime = new Date().toISOString().split('T');
+    const time = dateAndTime[1].split(':');
+
+    this.date = dateAndTime[0]+'T'+time[0]+':'+time[1]+':'+time[2].split('.')[0];
   }
 }
 </script>
