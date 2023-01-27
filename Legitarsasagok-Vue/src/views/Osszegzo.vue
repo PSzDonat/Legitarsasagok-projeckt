@@ -12,9 +12,9 @@
       </thead>
       <tbody>
         <tr v-for="(item, index) in Data_Reservations" :key="index">
-          <td>{{ Data_Airline[item.id-1].legitarsasag }}</td>
-          <td>{{ Data_Airline[item.id-1].honnan  }}</td>
-          <td>{{ Data_Airline[item.id-1].hova }}</td>
+          <td>{{ Data_Airline[item.id-2].legitarsasag }}</td>
+          <td>{{ Data_Airline[item.id-2].honnan  }}</td>
+          <td>{{ Data_Airline[item.id-2].hova }}</td>
           <td>{{ Data_Flight[item.id-2].ferohely }}/{{ item.foglaltHelyek }}</td>
           <td>{{ item.foglalasokOsszege }}</td>
         </tr>
