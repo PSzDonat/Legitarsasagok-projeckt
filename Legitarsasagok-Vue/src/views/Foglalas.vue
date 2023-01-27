@@ -55,12 +55,9 @@
               <td>{{item.hova}}</td>
               <td>{{item.tavolsag}} Km</td>
               <td>{{item.utazasiIdo}}</td>
-              <td>{{this.Data_Flight[index].ara}}</td>
-              <td v-if="ferohely != foglaltHelyek">
+              <td>{{this.Data_Flight[item.id-1].ara}}</td>
+              <td>
                 <button class="btn btn-primary" @click="selectRepuloJarat(item.id)">Vétel</button>
-              </td>
-              <td v-if="ferohely == foglaltHelyek">
-                Nincs több hely
               </td>
             </tr>
           </tbody>
@@ -138,8 +135,6 @@ export default {
     },
     selectRepuloJarat(index) {
       let temp = this.Data_Reservations.filter(x=>x.menetrend_ID == index+1);
-      console.log(index);
-      console.log(temp);
       if (temp.length != 0) {
         this.letezik = true;
         this.foglaltHelyek = temp[0].foglaltHelyek;
@@ -147,8 +142,8 @@ export default {
         this.jaratDatuma = temp[0].jaratDatuma;
       }
       this.selected_id = index+1;
-      this.ara = this.Data_Flight[index].ara;
-      this.ferohely = this.Data_Flight[index].ferohely;
+      this.ara = this.Data_Flight[index-1].ara;
+      this.ferohely = this.Data_Flight[index-1].ferohely;
       this.toNextPage()
     },
     foglalas() {
