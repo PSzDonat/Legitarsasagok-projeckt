@@ -57,7 +57,7 @@
               <td>{{item.utazasiIdo}}</td>
               <td>{{this.Data_Flight[index].ara}}</td>
               <td v-if="ferohely != foglaltHelyek">
-                <a class="btn btn-primary" @click="selectRepuloJarat(item.id)">Vétel</a>
+                <button class="btn btn-primary" @click="selectRepuloJarat(item.id)">Vétel</button>
               </td>
               <td v-if="ferohely == foglaltHelyek">
                 Nincs több hely
@@ -74,7 +74,7 @@
             <label for="utasokszama">Utasok Száma:</label>
             <input min="0" :max="ferohely-foglaltHelyek" v-model="utasokSzama" type="number" name="utasokszama" id="utasokszama" class="form-control mt-1">
             <div class="d-flex justify-content-between align-items-center">
-              <a class="btn btn-primary mt-3" @click="foglalas">Vásárlás</a>
+              <button class="btn btn-primary mt-3" @click="foglalas">Vásárlás</button>
               <h4 class="m-0"><span class="badge bg-secondary">{{this.calculatePrice}} Ft</span></h4>
             </div>
           </div>
