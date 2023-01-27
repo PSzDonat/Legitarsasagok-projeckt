@@ -13,7 +13,7 @@
             </ul>
           </div>
           <h4>Gyere foglalj helyet járatunkon!</h4>
-          <button type="button" class="btn btn-outline-dark" id="button">Fogallás</button>
+          <router-link class="btn btn-outline-dark" id="button" to="/Foglalas">Fogallás</router-link>
         </div>
     </div>
   </div>
