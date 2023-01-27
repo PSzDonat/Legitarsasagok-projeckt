@@ -15,7 +15,7 @@
           <td>{{ Data_Airline[item.id-1].legitarsasag }}</td>
           <td>{{ Data_Airline[item.id-1].honnan  }}</td>
           <td>{{ Data_Airline[item.id-1].hova }}</td>
-          <td>{{ Data_Flight[item.id-1].ferohely }}/{{ item.foglaltHelyek }}</td>
+          <td>{{ Data_Flight[item.id-2].ferohely }}/{{ item.foglaltHelyek }}</td>
           <td>{{ item.foglalasokOsszege }}</td>
         </tr>
       </tbody>
