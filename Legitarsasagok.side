@@ -1,0 +1,215 @@
+{
+  "id": "a0f97487-5f8c-407c-8fc2-cd0bc73b4541",
+  "version": "2.0",
+  "name": "Legitarsasagok",
+  "url": "http://localhost:5173",
+  "tests": [{
+    "id": "6cd8b49f-fafd-4c8c-b8bb-1851a53b4b72",
+    "name": "Vásárlás",
+    "commands": [{
+      "id": "cc272c74-6123-4463-a4c0-0e291f7add41",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3e48c60-8dca-4d39-9514-d52b19dc74cd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "891x743",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5d8b65db-8a5a-44f3-88be-3e7ccc0c42f7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Jegy fogalalás",
+      "targets": [
+        ["linkText=Jegy fogalalás", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Jegy fogalalás')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Foglalas')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Jegy fogalalás')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f6c4b31-ea4e-476a-885a-69c74b5ce4b9",
+      "comment": "",
+      "command": "click",
+      "target": "id=RepuloJaratok",
+      "targets": [
+        ["id=RepuloJaratok", "id"],
+        ["css=.mb-3:nth-child(1) > #RepuloJaratok", "css:finder"],
+        ["xpath=//select[@id='RepuloJaratok']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/form/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "88ddad71-cb54-4dd5-9e9c-34d7f67d02d7",
+      "comment": "",
+      "command": "select",
+      "target": "id=RepuloJaratok",
+      "targets": [],
+      "value": "label=Budapest"
+    }, {
+      "id": "ba650f0e-8d88-49e7-9a18-91806d2efcc3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3:nth-child(2) > #RepuloJaratok",
+      "targets": [
+        ["css=.mb-3:nth-child(2) > #RepuloJaratok", "css:finder"],
+        ["xpath=(//select[@id='RepuloJaratok'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/form/div[2]/select", "xpath:idRelative"],
+        ["xpath=//div[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e3b1e5e-d55b-4f59-9280-7fafeebc0296",
+      "comment": "",
+      "command": "select",
+      "target": "css=.mb-3:nth-child(2) > #RepuloJaratok",
+      "targets": [],
+      "value": "label=Párizs"
+    }, {
+      "id": "ebecaff9-c986-4920-9602-26bbce8132ec",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Következö",
+      "targets": [
+        ["linkText=Következö", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Következö')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div/div/form/a", "xpath:idRelative"],
+        ["xpath=//form/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Következö')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4054a241-d8d7-49f0-8c59-86c583e0384f",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .btn",
+      "targets": [
+        ["css=tr:nth-child(1) .btn", "css:finder"],
+        ["xpath=//div[@id='app']/div/div/div/table/tbody/tr/td[7]/button", "xpath:idRelative"],
+        ["xpath=//td[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Vétel')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "400031dc-1f07-43ab-97ac-9f67850ca8d9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.border",
+      "targets": [
+        ["css=.border", "css:finder"],
+        ["xpath=//div[@id='app']/div/div/div/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdab4328-44a4-427b-9a70-1a60019d6ee3",
+      "comment": "",
+      "command": "type",
+      "target": "id=utasokszama",
+      "targets": [
+        ["id=utasokszama", "id"],
+        ["name=utasokszama", "name"],
+        ["css=#utasokszama", "css:finder"],
+        ["xpath=//input[@id='utasokszama']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "6"
+    }, {
+      "id": "c83c7889-42ac-4edf-88a9-5e3afcd8e6a7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//div[@id='app']/div/div/div/form/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Vásárlás')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "05725084-5210-45b4-931d-cbd7d7236049",
+    "name": "Gombok",
+    "commands": [{
+      "id": "b855441e-2a82-4a66-9047-c7f933ff7a6a",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe2a6627-f7d1-49ce-bf77-84c719673864",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "891x743",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b321e207-293f-4dff-954e-37c36088a0ff",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Foglalás összegzés",
+      "targets": [
+        ["linkText=Foglalás összegzés", "linkText"],
+        ["css=.nav-item:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Foglalás összegzés')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Osszegzo')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Foglalás összegzés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8bcf10bc-bf3b-44e9-a02c-e2fc533acdf6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Jegy fogalalás",
+      "targets": [
+        ["linkText=Jegy fogalalás", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Jegy fogalalás')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Foglalas')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Jegy fogalalás')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9f4d26c-46fa-4932-9756-cd9e3d3d7585",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Kezdőoldal",
+      "targets": [
+        ["linkText=Kezdőoldal", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Kezdőoldal')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/')])[2]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Kezdőoldal')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "c2dafef1-9796-4864-8347-ecba82126e81",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6cd8b49f-fafd-4c8c-b8bb-1851a53b4b72"]
+  }],
+  "urls": ["http://localhost:5173/"],
+  "plugins": []
+}
